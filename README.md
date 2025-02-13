@@ -1,50 +1,24 @@
-# React + TypeScript + Vite
+# UI Coding Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Your task is to build a little tool for displaying public companies basic data and a chart with their latest, respective daily stock quotes.
 
-Currently, two official plugins are available:
+You are required to use the [AlphaVantage API\*](https://www.alphavantage.co/documentation/) which provides both price and company data:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- _Core > Daily Adjusted_ for prices (use the "adjusted close" as price)
+- _Fundamental > Company Overview_ for company data
 
-## Expanding the ESLint configuration
+Notice that the free plan has an API limit of 5 req / min, you might want to do something about it for your power users.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Enjoy!**
 
-- Configure the top-level `parserOptions` property like this:
+\* Shouldn't you have received an API key, we kindly ask you to sign up for an API key at AlphaVantage, you don’t need to use your actual e-mail address for signing up, as the API key will be revealed immediately on the sign-up page.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+# About
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+This template provides a minimal setup to get React working in Vite with HMR.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+TypeScript is not a requirement! All TS rules and ESLint were disabled.
+
+Feel free to reset everything if you prefer any other language, tooling or framework!
