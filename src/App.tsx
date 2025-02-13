@@ -1,9 +1,6 @@
 import "./App.css";
 
 function App() {
-	fetch(
-		"https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo",
-	);
 	return (
 		<>
 			<h1>Stock Terminal</h1>
@@ -16,7 +13,9 @@ function App() {
 						</td>
 					</tr>
 					<tr>
-						<td width="50%">"Chart"</td>
+						<td width="50%" style={{ border: "1px solid black" }}>
+							"Chart"
+						</td>
 						<td width="50%">
 							<h2>Company Data</h2>
 							<table border={1} width="100%">
