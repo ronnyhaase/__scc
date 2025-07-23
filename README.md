@@ -4,7 +4,7 @@ Your task is to build a little tool for displaying public companies basic data a
 
 You are required to use the [AlphaVantage API\*](https://www.alphavantage.co/documentation/) which provides both price and company data:
 
-- _Core > Daily Adjusted_ for prices (use the "adjusted close" as price)
+- _Core > Daily_ for prices (use the "close" as price)
 - _Fundamental > Company Overview_ for company data
 
 Notice that the free plan has an API limit of 5 req / min, you might want to do something about it for your power users.
