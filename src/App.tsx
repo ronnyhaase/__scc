@@ -36,7 +36,7 @@ function App() {
 										<td>SMBL</td>
 									</tr>
 									<tr>
-										<td>Marlet Cap</td>
+										<td>Market Cap</td>
 										<td>0</td>
 									</tr>
 									<tr>
