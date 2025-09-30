@@ -7,6 +7,8 @@ their daily stock prices with an interactive chart.
 It should have an input where the user can enter the respective ticker (e.g.
 IBM, AAPL, etc.)
 
+Also notice that the API has a rate limit of 6 request per minute, you might want to do something about it.
+
 ### Mockup
 
 ![Mockup](./mockup.png)

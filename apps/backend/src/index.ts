@@ -2,6 +2,7 @@ import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { logger } from "hono/logger";
+import { rateLimiter } from "hono-rate-limiter";
 
 import { prepareData } from "./data";
 
@@ -10,6 +11,22 @@ const app = new Hono();
 
 app.use("/*", cors());
 app.use(logger());
+app.use(
+	rateLimiter({
+		windowMs: 60 * 1000,
+		limit: Number(process.env.RATE_LIMIT) ?? 6,
+		keyGenerator: () => Promise.resolve(process.env.API_KEY ?? ""),
+		handler: (ctx) => {
+			return ctx.json(
+				{
+					Note: `We have detected your API key as ${process.env.API_KEY ?? ""} and our standard API rate limit is 6 requests per minute.`,
+				},
+				200,
+			);
+		},
+	}),
+);
+
 app.get("/query", (ctx) => {
 	const fn = ctx.req.query("function");
 	const symbol = ctx.req.query("symbol");
