@@ -22,7 +22,7 @@ The API server will run on http://localhost:3000 and print your API key on start
 The API service provides two endpoints for fetching company and stock price data:
 
 - Company Overview: [http://localhost:3000/query?function=OVERVIEW&symbol=IBM&apikey=demo](http://localhost:3000/query?function=OVERVIEW&symbol=IBM&apikey=demo)
-- Daily Stock Prices: [http://localhost:3000/query?function=OVERVIEW&symbol=IBM&apikey=demo](http://localhost:3000/query?function=OVERVIEW&symbol=IBM&apikey=demo)
+- Daily Stock Prices: [http://localhost:3000/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo](http://localhost:3000/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo)
 
 Where the `symbol` parameter is the symbol the user wants to look up.
 Please also provide the API key via the `apikey` parameter.
