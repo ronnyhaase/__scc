@@ -17,7 +17,7 @@ This repository comes with an API service in `apps/backend`.
 
 Please run `npm install` and `npm run dev` inside and otherwise ignore it's code.
 
-The API server will run on http://localhost:3000
+The API server will run on http://localhost:3000 and print your API key on startup.
 
 The API service provides two endpoints for fetching company and stock price data:
 
