@@ -13,9 +13,9 @@ app.use("/*", cors());
 app.use(logger());
 app.use(
 	rateLimiter({
-		windowMs: 60 * 1000,
-		limit: Number(process.env.RATE_LIMIT) ?? 6,
-		keyGenerator: () => Promise.resolve(process.env.API_KEY ?? ""),
+		windowMs: Number(process.env.RATELIMIT_WINDOW) ?? 60 * 1000,
+		limit: Number(process.env.RATELIMIT_LIMIT) ?? 6,
+		keyGenerator: () => Promise.resolve(process.env.API_KEY ?? "notrandom"),
 		handler: (ctx) => {
 			return ctx.json(
 				{
