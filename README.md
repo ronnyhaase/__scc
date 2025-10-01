@@ -1,24 +1,49 @@
 # UI Coding Challenge
 
-Your task is to build a little tool for displaying public companies basic data and a chart with their latest, respective daily stock quotes.
+## Task
 
-You are required to use the [AlphaVantage API\*](https://www.alphavantage.co/documentation/) which provides both price and company data:
+Build a web application that displays public company information and visualizes
+their daily stock prices with an interactive chart.
+It should have an input where the user can enter the respective ticker (e.g.
+IBM, AAPL, etc.)
 
-- _Core > Daily_ for prices (use the "close" as price)
-- _Fundamental > Company Overview_ for company data
+Also notice that the API has a rate limit of 6 request per minute, you might want to do something about it.
 
-Notice that the free plan has an API limit of 5 req / min, you might want to do something about it for your power users.
+### Mockup
+
+![Mockup](./mockup.png)
+
+## API documentation
+
+This repository comes with an API service in `apps/backend`.
+
+Please run `npm install` and `npm run dev` inside and otherwise ignore it's code.
+
+The API server will run on http://localhost:3000 and print your API key on startup.
+
+The API service provides two endpoints for fetching company and stock price data:
+
+- Company Overview: [http://localhost:3000/query?function=OVERVIEW&symbol=IBM&apikey=demo](http://localhost:3000/query?function=OVERVIEW&symbol=IBM&apikey=demo)
+- Daily Stock Prices: [http://localhost:3000/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo](http://localhost:3000/query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=demo)
+
+Where the `symbol` parameter is the symbol the user wants to look up.
+Please also provide the API key via the `apikey` parameter.
+
+Notice, that it only support following symbols:
+
+```
+AAPL, AMZN, CSCO, FB, GOOG, IBM, MSFT, NFLX, NVDA, TSLA
+```
+
+## Implementation Requirements
+
+Work within the `apps/frontend` directory, which includes:
+
+- A Vite + React template with Hot Module Replacement (HMR)
+- TypeScript support (optional - not required)
+- Disabled TypeScript rules and ESLint for flexibility
+
+Feel free to reset the frontend setup entirely if you prefer any other language,
+tooling or framework!
 
 **Enjoy!**
-
-\* Shouldn't you have received an API key, we kindly ask you to sign up for an API key at AlphaVantage, you don’t need to use your actual e-mail address for signing up, as the API key will be revealed immediately on the sign-up page.
-
----
-
-# About
-
-This template provides a minimal setup to get React working in Vite with HMR.
-
-TypeScript is not a requirement! All TS rules and ESLint were disabled.
-
-Feel free to reset everything if you prefer any other language, tooling or framework!
