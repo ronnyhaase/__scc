@@ -32,7 +32,7 @@ Please also provide the API key via the `apikey` parameter.
 Notice, that it only support following symbols:
 
 ```
-AAPL, AMZN, CSCO, FB, GOOG, IBM, MSFT, NFLX, NVDA, TSLA
+AAPL, AMZN, CSCO, GOOG, IBM, META, MSFT, NFLX, NVDA, TSLA
 ```
 
 ## Implementation Requirements
